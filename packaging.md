@@ -2,7 +2,7 @@ How to create a Debian package from source
 ==========================================
 :toc:
 :copyright: Frank Hofmann
-:revnumber: 0.8
+:revnumber: 0.9
 :Author Initials: FH
 :edition: 1
 :lang: en
@@ -139,12 +139,25 @@ This is done in several single steps.
 === Prepare the package structure ===
 
 . change into the directory that keeps the entire source code of the
-package:
+package. In our example the package contains the file `helloworld.py`,
+only:
 +
 ```sh
 ~$ cd build/helloworld/0.1/helloworld-0.1
 ~/build/helloworld/0.1/helloworld-0.1$ ls
 helloworld.py
+```
++
+. let's add the files that are specific to a Debian package. The tool
+`dh_make` comes into play. The switch `-e` uses the given address as the
+email address in the `Maintainer` field of the `debian/control` file.
+Building the package use your own email address, instead.
++
+The switch `-f` uses the given file as the original source archive, and
+skips the copying of the current program tree to `program.orig`.
++
+```sh
+~/build/helloworld/0.1/helloworld-0.1$ dh_make -e frank.hofmann@efho.de -f ../helloworld-0.1.tar.gz
 ```
 
 === Adjust the control file ===
