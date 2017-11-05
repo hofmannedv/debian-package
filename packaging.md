@@ -2,7 +2,7 @@ How to create a Debian package from source
 ==========================================
 :toc:
 :copyright: Frank Hofmann
-:revnumber: 0.15
+:revnumber: 0.16
 :Author Initials: FH
 :edition: 1
 :lang: en
@@ -203,7 +203,7 @@ README.Debian         source
 
 The file `debian/control` keeps the dependencies that are needed _to
 build_ the package. Using the command `dpkg-depcheck -d ./configure` you
-receive a list with all the required packages. In our case there is
+receive a list with all the required packages. In our case there is no
 further package needed because Python is an interpreted language.
 
 Next, we have to edit the file `debian/control` and add package-specific
