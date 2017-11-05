@@ -2,7 +2,7 @@ How to create a Debian package from source
 ==========================================
 :toc:
 :copyright: Frank Hofmann
-:revnumber: 0.5
+:revnumber: 0.6
 :Author Initials: FH
 :edition: 1
 :lang: en
@@ -95,7 +95,15 @@ $ cp helloworld-0.1.tar.gz ~./build/helloworld/0.1
 +
 ```sh
 $ cd ~./build/helloworld/0.1
-$ tar -xzf helloworld-0.1.tar.gz
+~/build/helloworld/0.1$ tar -xzf helloworld-0.1.tar.gz
+```
++
+Now, the directory contains both the source code in a separate
+directory, and the compressed archive:
++
+```sh
+~/build/helloworld/0.1$ ls
+helloworld-0.1  helloworld-0.1.tar.gz
 ```
 
 === The packaging tool chain ===
