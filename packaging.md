@@ -2,7 +2,7 @@ How to create a Debian package from source
 ==========================================
 :toc:
 :copyright: Frank Hofmann
-:revnumber: 0.11
+:revnumber: 0.12
 :Author Initials: FH
 :edition: 1
 :lang: en
@@ -200,6 +200,33 @@ README.Debian         source
 ```
 
 === Adjust the control file ===
+
+The file `debian/control` keeps the dependencies that are needed _to
+build_ the package. Using the command `dpkg-depcheck -d ./configure` you
+receive a list with all the required packages. In our case there is
+further package needed because Python is an interpreted language.
+
+Next, we have to edit the file `debian/control` and add package-specific
+values. For our example it looks as follows:
+
+```
+Source: helloworld
+Section: python
+Priority: optional
+Maintainer: Frank Hofmann <frank.hofmann@efho.de>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.5
+Homepage: http://www.efho.de/
+#Vcs-Git: git://anonscm.debian.org/collab-maint/helloworld.git
+#Vcs-Browser: http://anonscm.debian.org/?p=collab-maint/helloworld.git;a=summary
+
+Package: helloworld
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, python 
+Description: Prints Hello World in Python
+  Prints Hello World in Python
+```
+
 
 === Adjust the copyright file ===
 
