@@ -2,7 +2,7 @@ How to create a Debian package from source
 ==========================================
 :toc:
 :copyright: Frank Hofmann
-:revnumber: 0.13
+:revnumber: 0.15
 :Author Initials: FH
 :edition: 1
 :lang: en
@@ -276,7 +276,71 @@ That's all we need so far -- now we can build the package, finally.
 
 == Build the package ==
 
+To build the package we have to move up one directory and run the
+following command:
+
+```sh
+~/build/helloworld/0.1/helloworld-0.1$ dpkg-buildpackage -rfakeroot
+```
+
 === For your hardware architecture ===
+
+The command above results in a longer list of output messages:
+
+```sh
+dpkg-buildpackage: Quellpaket helloworld
+dpkg-buildpackage: Quellpaket helloworld
+dpkg-buildpackage: Quellversion 0.1-1
+dpkg-buildpackage: Quelldistribution unstable
+dpkg-buildpackage: Quellen geändert durch Frank Hofmann <frank.hofmann@efho.de>
+dpkg-buildpackage: Host-Architektur amd64
+ dpkg-source --before-build helloworld-0.1
+ fakeroot debian/rules clean
+dh clean 
+   dh_testdir
+   dh_auto_clean
+   dh_clean
+ dpkg-source -b helloworld-0.1
+dpkg-source: Information: Quellformat »3.0 (quilt)« wird verwendet
+dpkg-source: Information: helloworld wird unter Benutzung des existierenden ./helloworld_0.1.orig.tar.gz gebaut
+dpkg-source: Information: helloworld wird in helloworld_0.1-1.debian.tar.xz gebaut
+dpkg-source: Information: helloworld wird in helloworld_0.1-1.dsc gebaut
+ debian/rules build
+dh build 
+   dh_testdir
+   dh_auto_configure
+   dh_auto_build
+   dh_auto_test
+ fakeroot debian/rules binary
+dh binary 
+   dh_testroot
+   dh_prep
+   dh_auto_install
+   dh_installdocs
+   dh_installchangelogs
+   dh_perl
+   dh_link
+   dh_compress
+   dh_fixperms
+   dh_strip
+   dh_makeshlibs
+   dh_shlibdeps
+   dh_installdeb
+   dh_gencontrol
+dpkg-gencontrol: Warnung: Feld Depends von Paket helloworld: unbekannte Substitutionsvariable ${shlibs:Depends}
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: Paket »helloworld« wird in »../helloworld_0.1-1_amd64.deb« gebaut.
+ dpkg-genchanges  >../helloworld_0.1-1_amd64.changes
+dpkg-genchanges: kompletter Quellcode beim Hochladen hinzufügen
+ dpkg-source --after-build helloworld-0.1
+dpkg-buildpackage: Alles hochzuladen (Originalquellen enthalten)
+ signfile helloworld_0.1-1.dsc
+
+Sie benötigen eine Passphrase, um den geheimen Schlüssel zu entsperren.
+Benutzer: "Frank Hofmann (Hofmann EDV) <frank.hofmann@efho.de>"
+4096-Bit RSA Schlüssel, ID D431AC07, erzeugt 2014-09-05
+```
 
 === For a different hardware architecture ===
 
