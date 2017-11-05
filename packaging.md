@@ -9,6 +9,17 @@ How to create a Debian package from source
 :date: November 5, 2017
 :numbered:
 
+== Preface ==
+
+* it is better to install software as a software package, rather than a source file
+** validated and overseen by a package maintainer
+** fits to the other software
+** signed with a GPG key
+* package format depends on the Linux distribution (selection):
+`deb`:: Debian GNU/Linux, Ubuntu, Armbian, Linux Mint, Knoppix
+`rpm`:: RedHat Linux, Fedora, CentOS, openSUSE
+* this document explains how to build a package for Debian GNU/Linux
+
 == Requirements ==
 
 === GPG key ===
