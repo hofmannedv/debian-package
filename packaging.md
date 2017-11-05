@@ -2,7 +2,7 @@ How to create a Debian package from source
 ==========================================
 :toc:
 :copyright: Frank Hofmann
-:revnumber: 0.2
+:revnumber: 0.3
 :Author Initials: FH
 :edition: 1
 :lang: en
@@ -14,12 +14,12 @@ How to create a Debian package from source
 Being responsible for a machine means taking care of the hardware as
 well as the software components. As seen in everyday life as a system
 administrator it is much better to install software as a software
-package rather than a source file. This reduces the costs to properly
-maintain the system.
+package rather than a bunch of source files. This reduces the costs to
+properly maintain the system.
 
-Packages that are available from your distributor are validated and
-overseen by a package maintainer. He tested the software, and assures
-that it fits to the other software packages available in the
+Packages that are available from your preferred distributor are
+validated and overseen by a package maintainer. He tested the software,
+and assures that it fits to the other software packages available in the
 distribution. Furthermore, the package is signed with a GPG key from the
 package maintainer. This guarantees the integrity of the package and
 shows you that the package is a trusted source.
