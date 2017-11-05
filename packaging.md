@@ -2,7 +2,7 @@ How to create a Debian package from source
 ==========================================
 :toc:
 :copyright: Frank Hofmann
-:revnumber: 0.4
+:revnumber: 0.5
 :Author Initials: FH
 :edition: 1
 :lang: en
@@ -40,8 +40,18 @@ https://opensuse.org/[openSUSE]
 
 This document explains how to build a package for Debian GNU/Linux. For
 a detailed information about the Debian package format and the tools to
-maintain a `deb` based Linux system you have a look into the Debian
+maintain a `deb` based Linux system you may have a look into the Debian
 Package Management Book <<dpmb>>.
+
+The package we will work with is named `helloworld` and has the version
+number 0.1. For demonstration purposes it simply contains a single
+Python script that outputs the famous message "Hello, world!":
+
+```python
+#!/usr/bin/python
+
+print ("Hello, world!")
+```
 
 == Requirements ==
 
@@ -67,7 +77,11 @@ This name will have to be exactly the same in the package, then.
 
 === Prepare the software to be packaged ===
 
-* 
+* create a directory to build the package in
+
+```sh
+$ mkdir -p ./build/
+```
 
 === The packaging tool chain ===
 
