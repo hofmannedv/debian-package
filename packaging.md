@@ -2,7 +2,7 @@ How to create a Debian package from source
 ==========================================
 :toc:
 :copyright: Frank Hofmann
-:revnumber: 0.12
+:revnumber: 0.13
 :Author Initials: FH
 :edition: 1
 :lang: en
@@ -271,6 +271,8 @@ helloworld (0.1-1) unstable; urgency=low
 
  -- Frank Hofmann <frank.hofmann@efho.de>  Sat, 04 Nov 2017 21:16:13 +0100
 ```
+
+That's all we need so far -- now we can build the package, finally.
 
 == Build the package ==
 
