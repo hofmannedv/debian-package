@@ -38,7 +38,10 @@ https://opensuse.org/[openSUSE]
 
 `tar.xz`:: https://www.archlinux.org/[Arch Linux]
 
-This document explains how to build a package for Debian GNU/Linux.
+This document explains how to build a package for Debian GNU/Linux. For
+a detailed information about the Debian package format and the tools to
+maintain a `deb` based Linux system you have a look into the Debian
+Package Management Book <<dpmb>>.
 
 == Requirements ==
 
