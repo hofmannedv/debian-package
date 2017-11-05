@@ -24,7 +24,22 @@ How to create a Debian package from source
 
 === GPG key ===
 
+* have your GPG key available
+** the key will be needed to sign the package
+** unsigned packages are untrustworthy and cannot be part of the Debian universe
+* if not yet done create one
+
+```sh
+$ gpg --gen-key
+$ gpg -a --output ~/.gnupg/YOUR_NAME.gpg --export 'YOUR NAME'
+$ gpg --import ~/.gnupg/YOUR_NAME.gpg
+```
+* make sure that the name _YOUR NAME_ is correct
+** will be exactly the same in the package, then
+
 === Prepare the software to be packaged ===
+
+* 
 
 === The packaging tool chain ===
 
