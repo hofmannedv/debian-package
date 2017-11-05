@@ -2,7 +2,7 @@ How to create a Debian package from source
 ==========================================
 :toc:
 :copyright: Frank Hofmann
-:revnumber: 0.9
+:revnumber: 0.10
 :Author Initials: FH
 :edition: 1
 :lang: en
@@ -151,13 +151,33 @@ helloworld.py
 . let's add the files that are specific to a Debian package. The tool
 `dh_make` comes into play. The switch `-e` uses the given address as the
 email address in the `Maintainer` field of the `debian/control` file.
-Building the package use your own email address, instead.
+Building the package use your own email address, instead. Keep in mind
+to use the same email address that corresponds to your GPG key.
 +
 The switch `-f` uses the given file as the original source archive, and
 skips the copying of the current program tree to `program.orig`.
 +
 ```sh
 ~/build/helloworld/0.1/helloworld-0.1$ dh_make -e frank.hofmann@efho.de -f ../helloworld-0.1.tar.gz
+```
+At the prompt you are asked to select the type of package that should be
+created. To choose _single binary_ type `s`.
++
+```sh
+Type of package: single binary, indep binary, multiple binary, library, kernel module, kernel patch?
+ [s/i/m/l/k/n] s
+
+Maintainer name  : Frank Hofmann
+Email-Address    : frank.hofmann@efho.de 
+Date             : Sat, 04 Nov 2017 21:16:13 +0100
+Package Name     : helloworld
+Version          : 0.1
+License          : blank
+Type of Package  : Single
+Hit <enter> to confirm: 
+Currently there is no top level Makefile. This may require additional tuning.
+Done. Please edit the files in the debian/ subdirectory now. You should also
+check that the helloworld Makefiles install into $DESTDIR and not in / .
 ```
 
 === Adjust the control file ===
