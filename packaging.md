@@ -2,7 +2,7 @@ How to create a Debian package from source
 ==========================================
 :toc:
 :copyright: Frank Hofmann
-:revnumber: 0.10
+:revnumber: 0.11
 :Author Initials: FH
 :edition: 1
 :lang: en
@@ -178,6 +178,25 @@ Hit <enter> to confirm:
 Currently there is no top level Makefile. This may require additional tuning.
 Done. Please edit the files in the debian/ subdirectory now. You should also
 check that the helloworld Makefiles install into $DESTDIR and not in / .
+```
++
+This results in a directory called `debian`:
++
+```sh
+~/build/helloworld/0.1/helloworld-0.1$ ls
+debian  helloworld.py
+```
++
+This directory contains all the package-specific files.
++
+```sh
+~/build/helloworld/0.1/helloworld-0.1$ ls debian
+changelog             copyright   helloworld.default.ex   manpage.1.ex
+menu.ex               preinst.ex  README.source           watch.ex
+compat                docs        helloworld.doc-base.EX  manpage.sgml.ex
+postinst.ex           prerm.ex    rules                   control
+helloworld.cron.d.ex  init.d.ex   manpage.xml.ex          postrm.ex
+README.Debian         source
 ```
 
 === Adjust the control file ===
