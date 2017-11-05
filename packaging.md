@@ -77,10 +77,25 @@ This name will have to be exactly the same in the package, then.
 
 === Prepare the software to be packaged ===
 
-* create a directory to build the package in
+We have to prepare a directory to build the package, then.
 
+. create a directory to prepare the environment in which we will build the package
++
 ```sh
-$ mkdir -p ./build/
+$ mkdir -p ~./build/helloworld/0.1
+```
++
+. copy the `tar.gz` compressed archive in the directory
++
+```sh
+$ cp helloworld-0.1.tar.gz ~./build/helloworld/0.1
+```
++
+. change into the directory, and extract the package
++
+```sh
+$ cd ~./build/helloworld/0.1
+$ tar -xzf helloworld-0.1.tar.gz
 ```
 
 === The packaging tool chain ===
