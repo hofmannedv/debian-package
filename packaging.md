@@ -2,7 +2,7 @@ How to create a Debian package from source
 ==========================================
 :toc:
 :copyright: Frank Hofmann
-:revnumber: 0.1
+:revnumber: 0.2
 :Author Initials: FH
 :edition: 1
 :lang: en
@@ -11,14 +11,34 @@ How to create a Debian package from source
 
 == Preface ==
 
-* it is better to install software as a software package, rather than a source file
-** validated and overseen by a package maintainer
-** fits to the other software
-** signed with a GPG key
-* package format depends on the Linux distribution (selection):
-`deb`:: Debian GNU/Linux, Ubuntu, Armbian, Linux Mint, Knoppix
-`rpm`:: RedHat Linux, Fedora, CentOS, openSUSE
-* this document explains how to build a package for Debian GNU/Linux
+Being responsible for a machine means taking care of the hardware as
+well as the software components. As seen in everyday life as a system
+administrator it is much better to install software as a software
+package rather than a source file. This reduces the costs to properly
+maintain the system.
+
+Packages that are available from your distributor are validated and
+overseen by a package maintainer. He tested the software, and assures
+that it fits to the other software packages available in the
+distribution. Furthermore, the package is signed with a GPG key from the
+package maintainer. This guarantees the integrity of the package and
+shows you that the package is a trusted source.
+
+The package format depends on your Linux distribution. Selected formats
+are the following ones:
+
+`deb`:: https://www.debian.org/[Debian GNU/Linux],
+https://www.ubuntu.com/[Ubuntu], https://www.armbian.com/[Armbian], https://linuxmint.com/[Linux Mint], http://www.knoppix.org/[Knoppix]
+
+`rpm`:: https://www.redhat.com/[RedHat Linux],
+https://www.getfedora.org/[Fedora], https://www.centos.org/[CentOS],
+https://opensuse.org/[openSUSE]
+
+`tgz and txz`:: https://www.slackware.com/[Slackware]
+
+`tar.xz`:: https://www.archlinux.org/[Arch Linux]
+
+This document explains how to build a package for Debian GNU/Linux.
 
 == Requirements ==
 
