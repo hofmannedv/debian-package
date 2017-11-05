@@ -180,6 +180,8 @@ Done. Please edit the files in the debian/ subdirectory now. You should also
 check that the helloworld Makefiles install into $DESTDIR and not in / .
 ```
 +
+image::dhmake.png[]
++
 This results in a directory called `debian`:
 +
 ```sh
@@ -198,6 +200,8 @@ postinst.ex           prerm.ex    rules                   control
 helloworld.cron.d.ex  init.d.ex   manpage.xml.ex          postrm.ex
 README.Debian         source
 ```
++
+image::dhmake2.png[]
 
 === Adjust the control file ===
 
@@ -343,6 +347,15 @@ Benutzer: "Frank Hofmann (Hofmann EDV) <frank.hofmann@efho.de>"
 ```
 
 === For a different hardware architecture ===
+
+== Validating the package ==
+
+* lintian
+** `lintian helloworld_0.1-1_amd64.deb`
+** switch `--pedantic`
+
+image::lintian.png[]
+
 
 == Links and References ==
 
