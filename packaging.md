@@ -2,7 +2,7 @@ How to create a Debian package from source
 ==========================================
 :toc:
 :copyright: Frank Hofmann
-:revnumber: 0.6
+:revnumber: 0.8
 :Author Initials: FH
 :edition: 1
 :lang: en
@@ -75,23 +75,47 @@ $ gpg --import ~/.gnupg/YOUR_NAME.gpg
 During creation make sure that the given name _YOUR NAME_ is correct.
 This name will have to be exactly the same in the package, then.
 
+=== The packaging tool chain ===
+
+To build a Debian package with source code the following software
+packages are required on your system:
+
+* build-essential
+* autoconf 
+* automake
+* autotools-dev 
+* dh-make 
+* debhelper 
+* devscripts 
+* fakeroot
+* xutils
+* lintian 
+* pbuilder
+
+As user `root` you can install these using the following command:
+
+```sh
+# apt-get install build-essential autoconf automake autotools-dev dh-make debhelper devscripts fakeroot xutils lintian pbuilder
+```
+
 === Prepare the software to be packaged ===
 
 We have to prepare a directory to build the package, then.
 
-. create a directory to prepare the environment in which we will build the package
+. create a directory to prepare the environment in which we will build
+the package:
 +
 ```sh
 $ mkdir -p ~./build/helloworld/0.1
 ```
 +
-. copy the `tar.gz` compressed archive in the directory
+. copy the `tar.gz` compressed archive in the directory:
 +
 ```sh
 $ cp helloworld-0.1.tar.gz ~./build/helloworld/0.1
 ```
 +
-. change into the directory, and extract the package
+. change into the directory, and extract the package:
 +
 ```sh
 $ cd ~./build/helloworld/0.1
@@ -106,11 +130,22 @@ directory, and the compressed archive:
 helloworld-0.1  helloworld-0.1.tar.gz
 ```
 
-=== The packaging tool chain ===
-
 == Debianization ==
 
-=== Prepare the package structure ==
+At this point we will add the files that are specific to a Debian
+package. That's why this step is named _Debianization_ of the software.
+This is done in several single steps.
+
+=== Prepare the package structure ===
+
+. change into the directory that keeps the entire source code of the
+package:
++
+```sh
+~$ cd build/helloworld/0.1/helloworld-0.1
+~/build/helloworld/0.1/helloworld-0.1$ ls
+helloworld.py
+```
 
 === Adjust the control file ===
 
