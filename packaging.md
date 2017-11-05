@@ -227,10 +227,50 @@ Description: Prints Hello World in Python
   Prints Hello World in Python
 ```
 
-
 === Adjust the copyright file ===
 
+The file `debian/copyright` contains the license information for the
+software package. It is prepared for the release via GNU Public License
+2 (GPLv2). For our example it looks as follows:
+
+```
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: helloworld
+Source: http://www.efho.de/
+
+Files: debian/*
+Copyright: 2017 Frank Hofmann <frank.hofmann@efho.de>
+License: GPL-2+
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+
+```
+
 === Adjust the changelog file ===
+
+After the copyright information the file `debian/changelog` has to be
+adjusted. In our example we add the information "Initial release".
+
+```
+helloworld (0.1-1) unstable; urgency=low
+
+  * Initial release
+
+ -- Frank Hofmann <frank.hofmann@efho.de>  Sat, 04 Nov 2017 21:16:13 +0100
+```
 
 == Build the package ==
 
