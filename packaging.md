@@ -2,7 +2,7 @@ How to create a Debian package from source
 ==========================================
 :toc:
 :copyright: Frank Hofmann
-:revnumber: 0.18
+:revnumber: 0.19
 :Author Initials: FH
 :edition: 1
 :lang: en
@@ -204,16 +204,6 @@ debian  helloworld.py
 +
 This directory contains all the package-specific files.
 +
-```sh
-~/build/helloworld/0.1/helloworld-0.1$ ls debian
-changelog             copyright   helloworld.default.ex   manpage.1.ex
-menu.ex               preinst.ex  README.source           watch.ex
-compat                docs        helloworld.doc-base.EX  manpage.sgml.ex
-postinst.ex           prerm.ex    rules                   control
-helloworld.cron.d.ex  init.d.ex   manpage.xml.ex          postrm.ex
-README.Debian         source
-```
-+
 image::dhmake2.png[]
 
 === Adjust the control file ===
@@ -299,6 +289,10 @@ following command:
 ```sh
 ~/build/helloworld/0.1/helloworld-0.1$ dpkg-buildpackage -rfakeroot
 ```
+
+The option `-rfakeroot` allows `dpkg-buildpackage` to run commands as a
+priviledged user with the help of the command `fakeroot`. This is
+necessary to prepare the package, and to create files and directories.
 
 === For your hardware architecture ===
 
