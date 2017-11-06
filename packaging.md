@@ -348,14 +348,63 @@ Benutzer: "Frank Hofmann (Hofmann EDV) <frank.hofmann@efho.de>"
 
 === For a different hardware architecture ===
 
+TBD.
+
 == Validating the package ==
 
-* lintian
-** `lintian helloworld_0.1-1_amd64.deb`
-** switch `--pedantic`
+Congratulations -- you succeeded in building a Debian package -- yeah!
+Now, let's have a closer look at the package. Here, `lintian` comes into
+play. This tool validates your package in order to find violations
+against the strict rules Debian packages have to fulfill.
+
+To run the tests type in the following command:
+
+```sh
+lintian helloworld_0.1-1_amd64.deb
+```
+
+The tool does not find rule violations but also spelling errors, and
+wrong characters. The switch `--pedantic` asks `lintian` to be much more
+critical than usual. As you can see below `lintian` is a little bit
+grumpy and has discovered three warnings, and one error.
 
 image::lintian.png[]
 
+Except for the first warning we can easily make `lintian` happy and
+ajust the package content according to the rule set. The warning
+`new-package-should-close-itp-bug` means that there is no bug report
+against the ITP package (ITP means _intended to package_). For a regular
+Debian package a bug report has to be sent to the bugtracker for package
+ITP to notify others that you intend to start packaging this software.
+
+=== Warning: `readme-debian-contains-debmake-template` ===
+
+The file `README.Debian` is intended to keep additional notes regarding
+this package. `dh_make` created this file for us:
+
+```
+helloworld for Debian
+---------------------
+
+<possible notes regarding this package - if none, delete this file>
+
+ -- Frank Hofmann <frank.hofmann@efho.de>  Sat, 04 Nov 2017 21:16:13 +0100
+```
+
+We don't have additional information, so we can delete the file.
+
+=== Warning: `description-starts-with-leading-spaces` ===
+
+This warning is raised because the longer description starts with more
+than a single space. As soon as we remove a single space the warning
+will disappear.
+
+=== Error: `description-synopsis-is-duplicated` ===
+
+Each package requires both a short and a longer description in
+`debian/control`. This error is raised because both descriptions are
+identical. As soon as we extended the longer description the error is
+gone.
 
 == Links and References ==
 
