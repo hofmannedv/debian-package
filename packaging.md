@@ -2,11 +2,11 @@ How to create a Debian package from source
 ==========================================
 :toc:
 :copyright: Frank Hofmann
-:revnumber: 0.16
+:revnumber: 0.17
 :Author Initials: FH
 :edition: 1
 :lang: en
-:date: November 5, 2017
+:date: November 6, 2017
 :numbered:
 
 == Preface ==
@@ -38,10 +38,20 @@ https://opensuse.org/[openSUSE]
 
 `tar.xz`:: https://www.archlinux.org/[Arch Linux]
 
-This document explains how to build a package for Debian GNU/Linux. For
-a detailed information about the Debian package format and the tools to
-maintain a `deb` based Linux system you may have a look into the Debian
-Package Management Book <<dpmb>>.
+This document explains how to build a package for Debian GNU/Linux
+briefly. For a detailed information about the Debian package format and
+the tools to maintain a `deb` based Linux system you may have a look
+into the Debian Package Management Book <<dpmb>>. 
+
+To build packages for Debian GNU/Linux these documents are essential:
+
+* The Debian New Maintainer's Guide <<dnmg>>
+
+* The Debian Developer's Reference <<ddr>>
+
+* The Debian Packaging Tutorial <<dpt>>
+
+* The Debian Policy Manual <<dpm>>
 
 The package we will work with is named `helloworld` and has the version
 number 0.1. For demonstration purposes it simply contains a single
@@ -408,8 +418,16 @@ gone.
 
 == Links and References ==
 
+- [[[ddr]]] Andreas Barth, Adam Di Carlo, Raphaël Hertzog, Lucas Nussbaum, Christian Schwarz, Ian Jackson: The Debian Developer's Reference, https://www.debian.org/doc/manuals/developers-reference/
+
+- [[[dnmg]]] Josip Rodin, Osamu Aoki: The Debian New Maintainer's Guide, https://www.debian.org/doc/manuals/maint-guide/index.en.html
+
 - [[[dpmb]]] Axel Beckert, Frank Hofmann: The Debian Package Management
   Book, https://www.dpmb.org/
+
+- [[[dpm]]] The Debian Policy Manual, https://www.debian.org/doc/debian-policy/
+
+- [[[dpt]]] The Debian Packaging Tutorial, https://www.debian.org/doc/devel-manuals#packaging-tutorial
 
 - [[[lushpaiPackage]]] Alex Lushpai: How to create debian package from source, https://coderwall.com/p/urkybq/how-to-create-debian-package-from-source
 
