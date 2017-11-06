@@ -296,7 +296,8 @@ necessary to prepare the package, and to create files and directories.
 
 === For your hardware architecture ===
 
-The command above results in a longer list of output messages:
+The command above results in a longer list of output messages (shown
+here in a German language environment):
 
 ```sh
 dpkg-buildpackage: Quellpaket helloworld
@@ -398,13 +399,14 @@ helloworld for Debian
  -- Frank Hofmann <frank.hofmann@efho.de>  Sat, 04 Nov 2017 21:16:13 +0100
 ```
 
-We don't have additional information, so we can delete the file.
+In our example we don't have additional information, so we can delete
+the file.
 
 === Warning: `description-starts-with-leading-spaces` ===
 
-This warning is raised because the longer description starts with more
-than a single space. As soon as we remove a single space the warning
-will disappear.
+This warning is raised because the longer description of our package in
+the file `debian/control` starts with more than a single space. As soon
+as we remove a single space the warning will disappear.
 
 === Error: `description-synopsis-is-duplicated` ===
 
