@@ -82,8 +82,11 @@ $ gpg -a --output ~/.gnupg/YOUR_NAME.gpg --export 'YOUR NAME'
 $ gpg --import ~/.gnupg/YOUR_NAME.gpg
 ```
 
-During creation make sure that the given name _YOUR NAME_ is correct.
-This name will have to be exactly the same in the package, then.
+During creation make sure that the given name _YOUR NAME_ is correct. It
+is common to use a combination of first name and last name. This name
+will have to be exactly the same in the package, then, when creating the
+`control` file of the Debian package. For more information regarding GPG
+have a look at the GNU Privacy Handbook <<gph>>.
 
 === The packaging tool chain ===
 
@@ -428,6 +431,8 @@ gone.
 - [[[dpm]]] The Debian Policy Manual, https://www.debian.org/doc/debian-policy/
 
 - [[[dpt]]] The Debian Packaging Tutorial, https://www.debian.org/doc/devel-manuals#packaging-tutorial
+
+- [[[gph]]] The GNU Privacy Handbook, https://www.gnupg.org/gph/en/manual.html
 
 - [[[lushpaiPackage]]] Alex Lushpai: How to create debian package from source, https://coderwall.com/p/urkybq/how-to-create-debian-package-from-source
 
