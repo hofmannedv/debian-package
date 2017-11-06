@@ -2,7 +2,7 @@ How to create a Debian package from source
 ==========================================
 :toc:
 :copyright: Frank Hofmann
-:revnumber: 0.17
+:revnumber: 0.18
 :Author Initials: FH
 :edition: 1
 :lang: en
@@ -433,4 +433,4 @@ gone.
 
 == Acknowledgements ==
 
-Axel Beckert
+The author would like to thank Axel Beckert and Gerold Rupprecht for their support, and critics while preparing this article.
