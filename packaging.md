@@ -6,7 +6,7 @@ How to create a Debian package from source
 :Author Initials: FH
 :edition: 1
 :lang: en
-:date: November 6, 2017
+:date: November 7, 2017
 :numbered:
 
 == Preface ==
