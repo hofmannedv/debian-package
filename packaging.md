@@ -2,7 +2,7 @@ How to create a Debian package from source
 ==========================================
 :toc:
 :copyright: Frank Hofmann
-:revnumber: 0.19
+:revnumber: 0.20
 :Author Initials: FH
 :edition: 1
 :lang: en
@@ -294,7 +294,7 @@ The option `-rfakeroot` allows `dpkg-buildpackage` to run commands as a
 priviledged user with the help of the command `fakeroot`. This is
 necessary to prepare the package, and to create files and directories.
 
-=== For your hardware architecture ===
+// === For your hardware architecture ===
 
 The command above results in a longer list of output messages (shown
 here in a German language environment):
@@ -354,11 +354,11 @@ Benutzer: "Frank Hofmann (Hofmann EDV) <frank.hofmann@efho.de>"
 4096-Bit RSA Schlüssel, ID D431AC07, erzeugt 2014-09-05
 ```
 
-=== For a different hardware architecture ===
-
-TBD.
-
-== Validating the package ==
+// === For a different hardware architecture ===
+//
+// TBD.
+//
+// == Validating the package ==
 
 Congratulations -- you succeeded in building a Debian package -- yeah!
 Now, let's have a closer look at the package. Here, `lintian` comes into
@@ -432,6 +432,11 @@ gone.
 
 - [[[lushpaiPackage]]] Alex Lushpai: How to create debian package from source, https://coderwall.com/p/urkybq/how-to-create-debian-package-from-source
 
+== About the author ==
+
+Frank Hofmann is an http://www.efho.de/[IT developer, trainer, and
+author] and prefers to work from Berlin, Geneva and Cape Town. Co-author of the Debian Package Management Book available from http://www.dpmb.org/.
+
 == Acknowledgements ==
 
-The author would like to thank Axel Beckert and Gerold Rupprecht for their support, and critics while preparing this article.
+The author would like to thank http://noone.org/[Axel Beckert] and http://geneva-observer.blogspot.com/[Gerold Rupprecht] for their support, and critics while preparing this article.
