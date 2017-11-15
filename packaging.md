@@ -2,11 +2,11 @@ How to create a Debian package from source
 ==========================================
 :toc:
 :copyright: Frank Hofmann
-:revnumber: 0.20
+:revnumber: 0.21
 :Author Initials: FH
 :edition: 1
 :lang: en
-:date: November 7, 2017
+:date: November 15, 2017
 :numbered:
 
 == Preface ==
@@ -18,7 +18,7 @@ package rather than a bunch of source files. This reduces the costs to
 properly maintain the system.
 
 Packages that are available from your preferred distributor are
-validated and overseen by a package maintainer. He tested the software,
+validated and overseen by a package maintainer. He tested the software
 and assures that it fits to the other software packages available in the
 distribution. Furthermore, the package is signed with a GPG key from the
 package maintainer. This guarantees the integrity of the package and
@@ -73,7 +73,7 @@ untrustworthy and cannot be part of the Debian universe.
 
 In case you do not have a GPG key yet create one. You may follow the
 three steps below. The first command generates a new key, the second one
-exports your new key to a separate file, and the third one adds the key
+exports your new key to a separate file and the third one adds the key
 to your personal keyring.
 
 ```sh
@@ -146,7 +146,7 @@ helloworld-0.1  helloworld-0.1.tar.gz
 == Debianization ==
 
 At this point we will add the files that are specific to a Debian
-package. That's why this step is named _Debianization_ of the software.
+package. That is why this step is named _Debianization_ of the software.
 This is done in several single steps.
 
 === Prepare the package structure ===
@@ -279,7 +279,7 @@ helloworld (0.1-1) unstable; urgency=low
  -- Frank Hofmann <frank.hofmann@efho.de>  Sat, 04 Nov 2017 21:16:13 +0100
 ```
 
-That's all we need so far -- now we can build the package, finally.
+That is all we need so far -- now we can build the package, finally.
 
 == Build the package ==
 
@@ -439,4 +439,6 @@ author] and prefers to work from Berlin, Geneva and Cape Town. Co-author of the 
 
 == Acknowledgements ==
 
-The author would like to thank http://noone.org/[Axel Beckert] and http://geneva-observer.blogspot.com/[Gerold Rupprecht] for their support, and critics while preparing this article.
+The author would like to thank http://noone.org/[Axel Beckert],
+http://geneva-observer.blogspot.com/[Gerold Rupprecht] and Mandy
+Neumeyer for their support, and critics while preparing this article.
